@@ -2,7 +2,7 @@ import java.util.*;
 public class ProblemSet0{
     public static void main(String []args){
         //count in range test
-        int[] one = {2,7,5,9,3};
+        int[] one = {2,7,5,9,3,8,10,4,1};
         System.out.println(countInRange(one,3,8));
         //clump test
         ArrayList<String> two = new ArrayList<>(Arrays.asList("hi","there","what","is","up?"));
@@ -27,7 +27,7 @@ public class ProblemSet0{
     }
     public static void clump(ArrayList<String> list){
         for(int i = 0; i<list.size()-1; i++){
-            list.set(i,list.get(i)+" "+list.get(i+1)); //set the element equal to the element added to the element after
+            list.set(i,"("+list.get(i)+" "+list.get(i+1)+")"); //set the element equal to the element added to the element after
             list.remove(i+1);//remove the element added to the preceeding element
         }
     }

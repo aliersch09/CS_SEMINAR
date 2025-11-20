@@ -5,10 +5,15 @@ public class Ballot {
 
     public Ballot(){
         votes = new String[4];
+        votes[0] = " ";
+        votes[1] = " ";
+        votes[2] = " ";
+        votes[3] = " ";
         castVote();
     }
 
     public Ballot(String a, String b, String c, String d){
+        votes = new String[4];
         votes[0] = a;
         votes[1] = b;
         votes[2] = c;
@@ -31,7 +36,7 @@ public class Ballot {
         int[] numVotes = new int[4];
         Scanner scanner = new Scanner(System.in);
         for(int i = 0; i<4; i++){
-            System.out.println("What is your #"+i+" choice? (A,B,C,D)");
+            System.out.println("What is your #"+(i+1)+" choice? (A,B,C,D)");
             String vote = scanner.nextLine();
             if(vote.equals("A")&&numVotes[0]==0){
                 votes[i] = candidates[0];

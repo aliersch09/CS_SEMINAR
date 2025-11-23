@@ -1,0 +1,17 @@
+data set link: https://www.kaggle.com/datasets/pieca111/music-artists-popularity
+1. Intro
+    a. What was your general motivation for exploring this topic (i.e. your dataset choice)?
+        My general motivation was my curiosity for different music popularity, and what is liked by the general public. I wanted to know the comparison of the amount of listeners of different artists.
+    b. Briefly describe how the data was collected in your chosen dataset.
+        The data was collected using musical artists present in MusicBrainz database. This includes their name, tags, country, and popularity/listeners, based on data from last.fm. 
+    c. Which question did you end up exploring further?
+        I ended up exploring what nationality of artists is most popular. I was curious whether artists from the United States like Taylor Swift and Ariana Grande are more popular than combined artists everywhere else like Harry Styles and Charli XCX.
+2. Process
+    a. How did you go about answering your question? What specific pieces of info did you extract from your dataset and how did you use that data to answer your question?
+        I used the number of listeners for each artists according to last.fm as well as their country according to last.fm. I was then able to determine if that artist was from the US or not, and how many listeners they had. I then added all the US artist's listeners together, and all of the other country artist's listeners together and was able to compare the two results and come to a conclusion.
+    b. What difficulties did you run into and how did you approach solving them?
+        A difficulity that I ran into was that my data set was missing some data, so the splicing by commas did not work completely. Ms. Bono helped me solve this by adding a method that checks to see if that piece of data is able to be used. Another difficulty I encountered was that my data set was too big to be uploaded to git hub, so instead I put the link in this file.
+3. Results
+    a. What did the data show? What are your takeaways?
+    b. Describe some possible limitations to your research.
+    c. Given more time and resources, what additional implementation of your question would you be interested to explore?

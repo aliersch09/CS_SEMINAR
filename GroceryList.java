@@ -11,6 +11,7 @@ public class GroceryList extends Node{
         this.head = head;
     }
     //methods
+    //add method with item parameter
     public void add(String item){
         Node incoming = new Node(item);
         if (head==null){
@@ -23,6 +24,7 @@ public class GroceryList extends Node{
             curr.next = incoming;
         }
     }
+    //add method with item and index parameter
     public void add(String item, int idx){
         Node incoming = new Node(item);
         if(head==null){
@@ -44,6 +46,7 @@ public class GroceryList extends Node{
             }
         }
     }
+    //remove method - removes item at given index
     public void remove(int idx){
         if(head != null && idx<size()&&idx>=0){
             if (idx==0){
@@ -57,6 +60,7 @@ public class GroceryList extends Node{
             }
         }
     }
+    //returns the size of the grocery list
     public int size(){
         int count = 0;
         Node incoming = head;
@@ -66,6 +70,7 @@ public class GroceryList extends Node{
         }
         return count;
     }
+    //makes a map of all the items and their prices
     public Map<String, Double> getGroceryMap() throws FileNotFoundException, NullPointerException, NumberFormatException{
         Map<String, Double> map = new HashMap<>();
         Node curr = head;
@@ -82,6 +87,7 @@ public class GroceryList extends Node{
         }
         return map;
     }
+    //returns the total cost of the grocery list
     public double getCost() throws FileNotFoundException, NullPointerException{
         double totalCost = 0;
         Node curr = head;
@@ -91,6 +97,7 @@ public class GroceryList extends Node{
         }
         return totalCost;
     }
+    //returns the grocery list as a list of items with their prices
     public String toString(){
         String toRet = "";
         try{

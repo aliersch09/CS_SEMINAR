@@ -66,8 +66,8 @@ public class GroceryList extends Node{
         }
         return count;
     }
-    public Map<String, Double> getGroceryMap() throws FileNotFoundException, NullPointerException{
-        Map<String, Double> map = new HashMap<String,Double>();
+    public Map<String, Double> getGroceryMap() throws FileNotFoundException, NullPointerException, NumberFormatException{
+        Map<String, Double> map = new HashMap<>();
         Node curr = head;
         while(curr!=null){
             File f = new File("/Users/aliersch/CS/CS_SEMINAR/grocery-items.txt");
@@ -75,7 +75,7 @@ public class GroceryList extends Node{
                 while(sc.hasNextLine()){
                     ArrayList<String> line = new ArrayList<>(Arrays.asList(sc.nextLine().split(" ")));
                     if(curr.data.equals(line.get(0))){
-                        map.put(curr.data,Double.parseDouble((line.get(1))));
+                        map.put(curr.data, Double.parseDouble(line.get(1)));
                     }
                 }
             curr = curr.next;
@@ -84,12 +84,25 @@ public class GroceryList extends Node{
     }
     public double getCost() throws FileNotFoundException, NullPointerException{
         double totalCost = 0;
-        for(int i = 0; i<getGroceryMap().size(); i++){
-            totalCost += getGroceryMap().get(i);
+        Node curr = head;
+        while(curr!=null){
+            totalCost += getGroceryMap().get(curr.data);
+            curr = curr.next;
         }
         return totalCost;
     }
     public String toString(){
-        return Double.toString(getCost());
+        String toRet = "";
+        try{
+            Node curr = head;
+            while(curr!=null){
+                toRet+= curr;
+                toRet+= getGroceryMap().get(curr.data);
+                curr=curr.next;
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return toRet;
     }
 }
